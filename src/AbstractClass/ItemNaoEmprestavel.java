@@ -4,8 +4,8 @@ import java.util.Date;
 public abstract class ItemNaoEmprestavel {
     private String nome;
     private String autor;
-    private Date dataAtual;
-    private int quantidade;
+    private Date dataCadastro;
+    private int quantidade = 0;
 
     public String getNome() {
         return nome;
@@ -23,12 +23,12 @@ public abstract class ItemNaoEmprestavel {
         this.autor = autor;
     }
 
-    public Date getDataAtual() {
-        return dataAtual;
+    public Date getDataCadastro() {
+        return dataCadastro;
     }
 
-    public void setDataAtual(Date dataAtual) {
-        this.dataAtual = dataAtual;
+    public void setDataCadastro(Date dataAtual) {
+        this.dataCadastro = dataAtual;
     }
 
     public int getQuantidade() {
@@ -44,5 +44,7 @@ public abstract class ItemNaoEmprestavel {
     public abstract String pesquisaAutor();
     public abstract String pesquisaAno();
     public abstract String pesquisaItem();
+    public abstract String cadastrarItemNaoEmprestavel();
+    public abstract String editarItem();
 
 }

@@ -1,12 +1,24 @@
 package AbstractClass;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import Class.Livro;
 
 public abstract class ItemEmprestavel {
     private String nome;
-    private String autor;
-    private Date dataAtual;
-    private int quantidade;
 
+    private String titulo;
+    private String autor;
+    private Date dataCadastro;
+    private int quantidade = 0;
+    private boolean emprestado = false;
+    public boolean isEmprestado() {
+        return emprestado;
+    }
+
+    public void setEmprestado(boolean emprestado) {
+        this.emprestado = emprestado;
+    }
 
     public String getNome() {
         return nome;
@@ -14,6 +26,14 @@ public abstract class ItemEmprestavel {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getAutor() {
@@ -24,12 +44,12 @@ public abstract class ItemEmprestavel {
         this.autor = autor;
     }
 
-    public Date getData() {
-        return dataAtual;
+    public Date getDataCadastro() {
+        return dataCadastro;
     }
 
-    public void setData(Date data) {
-        this.dataAtual = data;
+    public void setDataCadastro(Date data) {
+        this.dataCadastro = data;
     }
 
     public int getQuantidade() {
@@ -40,7 +60,6 @@ public abstract class ItemEmprestavel {
         this.quantidade = quantidade;
     }
 
-
     public abstract String ordemAlfabetica();
     public abstract String pesquisaTitulo();
     public abstract String pesquisaAutor();
@@ -48,4 +67,7 @@ public abstract class ItemEmprestavel {
     public abstract String pesquisaItem();
     public abstract boolean verificarData();
     public abstract boolean verificarEmprestado();
+    public abstract String cadastrarItemEmprestavel();
+    public abstract String editarItem();
+
 }
